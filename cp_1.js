@@ -46,3 +46,17 @@ createTip(counter, "This is where the number of characters typed are counted and
 createTip(submit, "This button submits your user feedback!")
 
 //Event listener for submit button
+submit.addEventListener("click", (event)=>{
+    event.preventDefault();
+    //get data from input fields.
+    const userName = inputUN.value;
+    const userEmail = inputEM.value;
+    const userComments = inputC.value;
+    console.log(userName);
+    //check if any fields are empty, validate input.
+    if ((userName || userEmail || userComments) === ''){
+        alert('Error: Please fill all input fields.');
+    }else{
+
+    }
+})
