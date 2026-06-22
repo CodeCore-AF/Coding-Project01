@@ -26,16 +26,21 @@ const createTipSpan = function(container, text){
     toolTip.innerHTML = text;
     container.appendChild(toolTip);
     container.addEventListener("mouseout", (event)=>{
+        event.stopPropagation();
         toolTip0 = container.lastElementChild;
         toolTip0.style.display = 'none';
         console.log('MouseOut');
     });
     container.addEventListener("mouseover", (event)=>{
+        event.stopPropagation();
         toolTip0 = container.lastElementChild;
         toolTip0.style.display = 'block';    
     });
     
 }
 
-createTipSpan(form, "Hey, Listen!")
-
+createTipSpan(form, "This is the User Input Form.");
+createTipSpan(inputUN, 'This is the input field where you type your username.');
+createTipSpan(inputEM, "This is the input field wher you type your email.");
+createTipSpan(inputC, "This is where you type your comments and thoughts on our project.");
+createTipSpan(counter, "This is where the number of characters typed are counted and displayed.")
