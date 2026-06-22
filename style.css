@@ -5,8 +5,8 @@
     z-index: 1;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     position: absolute;
-    top: 0%;
-    right: 0%;
+    top: 5%;
+    right: 5%;
     display: block;
 }
 form {
