@@ -3,9 +3,12 @@ const form = document.querySelector("form");
 const inputUN = document.getElementById("userName");
 const inputEM = document.getElementById("userEmail");
 const inputC = document.getElementById("comments");
-const counter = document.querySelector("p");
 const submit = document.getElementById("submit");
+
+//objects to specify location for dynamic content.
+const counter = document.querySelector("p");
 const body = document.querySelector("body");
+const feedback = document.getElementById("feedback-display");
 
 //Add event listeners to DOM objects
 //Count user character inputs
@@ -17,7 +20,7 @@ form.addEventListener("input", (event) => {
         charSum += 1;
     }
     //console.log(event.inputType);
-    console.log(charSum);
+    //console.log(charSum);
     counter.innerHTML = `Character count: ${charSum}`
 });
 
@@ -30,12 +33,12 @@ const createTip = function(container, text){
         toolTip.innerHTML = text;
         console.log(event.target);
         body.appendChild(toolTip);
-        console.log('Mouseover');
+        //console.log('Mouseover');
     });
     container.addEventListener("mouseout", (event)=>{
         event.stopPropagation();
         body.removeChild(body.lastElementChild);
-        console.log('Mouseout');
+        //console.log('Mouseout');
     });
 }
 
@@ -52,11 +55,17 @@ submit.addEventListener("click", (event)=>{
     const userName = inputUN.value;
     const userEmail = inputEM.value;
     const userComments = inputC.value;
-    console.log(userName);
+    //console.log(userName);
     //check if any fields are empty, validate input.
     if ((userName || userEmail || userComments) === ''){
         alert('Error: Please fill all input fields.');
     }else{
-
+        //append valid entries to user feedback display.
+        feebackHeader = document.createElement('h2');
+        feebackHeader.innerHTML = "User Feeback Submitted: ";
+        feedback.appendChild(feebackHeader);
+        feedbackContent = document.createElement('p');
+        feedbackContent.innerHTML = `Username: ${userName}<br>Email: ${userEmail}<br>Comments: ${userComments}`;
+        feedback.appendChild(feedbackContent);
     }
 })
