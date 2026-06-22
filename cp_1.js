@@ -18,3 +18,24 @@ form.addEventListener("input", (event) => {
     console.log(charSum);
     counter.innerHTML = `Character count: ${charSum}`
 });
+
+//Function to create tooltips for all elements.
+const createTipSpan = function(container, text){
+    toolTip = document.createElement('span');
+    toolTip.classList.add('tool-tip');
+    toolTip.innerHTML = text;
+    container.appendChild(toolTip);
+    container.addEventListener("mouseout", (event)=>{
+        toolTip0 = container.lastElementChild;
+        toolTip0.style.display = 'none';
+        console.log('MouseOut');
+    });
+    container.addEventListener("mouseover", (event)=>{
+        toolTip0 = container.lastElementChild;
+        toolTip0.style.display = 'block';    
+    });
+    
+}
+
+createTipSpan(form, "Hey, Listen!")
+

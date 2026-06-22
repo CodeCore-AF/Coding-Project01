@@ -1,0 +1,14 @@
+.tool-tip {
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.20);
+    border-radius: 8px;
+    border: 5px, solid, black;
+    z-index: 1;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: none;
+}
+form {
+    position: relative;
+}
